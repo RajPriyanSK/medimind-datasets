@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "D:\MediMindAI\medimind-datasets\debug_shap.py", line 27, in <module>
+    explainer = shap.TreeExplainer(classifier)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\shap\explainers\_tree.py", line 278, in __init__
+    self.model = TreeEnsemble(model, self.data, self.data_missing, model_output)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\shap\explainers\_tree.py", line 1261, in __init__
+    self._set_xgboost_model_attributes(
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\shap\explainers\_tree.py", line 1506, in _set_xgboost_model_attributes
+    loader = XGBTreeModelLoader(self.original_model)
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python310\lib\site-packages\shap\explainers\_tree.py", line 2104, in __init__
+    self.base_score = float(learner_model_param["base_score"])
+ValueError: could not convert string to float: '[1.8363597E0,-2.016767E0,1.8040693E-1]'

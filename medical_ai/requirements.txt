@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+joblib
+spacy
+nltk
+pytesseract
+pdf2image
+opencv-python
+xgboost
+shap
