@@ -1,6 +1,6 @@
-from .feature_engineering import compute_features
-from .model import RiskModel
-from .llm_inference import ReasoningEngine, condition_mapper, explicit_hidden_risk_detector, calculate_severity, contraindication_detector
+from medical_model.feature_engineering import compute_features
+from medical_model.model import RiskModel
+from medical_model.llm_inference import ReasoningEngine, condition_mapper, explicit_hidden_risk_detector, calculate_severity, contraindication_detector
 
 _risk_model = RiskModel()
 _reasoning_engine = ReasoningEngine()
@@ -35,7 +35,7 @@ def evaluate_data_quality(patient_data: dict, features: dict) -> str:
         return "low"
 
 def generate_confidence_factors(features: dict, history: list, possible_conditions: list) -> dict:
-    from .llm_inference import MEDICAL_RANGES
+    from medical_model.llm_inference import MEDICAL_RANGES
     severe_count = 0
     moderate_count = 0
     mild_count = 0

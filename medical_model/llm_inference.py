@@ -156,7 +156,7 @@ def grounded_data_builder(current_report: dict) -> dict:
     return grounded
 
 def context_builder(patient_data: dict, explicit_hidden_risks: list, contraindications: list) -> str:
-    from .feature_engineering import compute_features
+    from medical_model.feature_engineering import compute_features
     features = compute_features(patient_data)
     
     current_report = patient_data.get("current_report", {})
@@ -446,7 +446,7 @@ class ReasoningEngine:
         parsed = output_parser(raw_output)
         safe_output = safety_validator(parsed, possible_conditions, patient_data.get("history", []))
         
-        from .feature_engineering import compute_features
+        from medical_model.feature_engineering import compute_features
         features = compute_features(patient_data)
         trends_lst = [f"{k.replace('trend_', '').replace('_', ' ').title()} is {v}" for k, v in features.items() if k.startswith("trend_") and v != "stable"]
         trends_str = ", ".join(trends_lst)
